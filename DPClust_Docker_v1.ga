@@ -1,0 +1,296 @@
+{
+    "a_galaxy_workflow": "true", 
+    "format-version": "0.1", 
+    "name": "DPClust_Docker_v1", 
+    "steps": {
+        "1": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "efb366cc-2189-42ab-8400-5dfcb45c7889", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "VCF_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 240.5, 
+                "left": 174
+            }, 
+            "tool_state": "{\"name\": \"VCF_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 1, 
+            "name": "Input dataset"
+        }, 
+        "0": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "f0f6c49b-e213-49c8-bd61-3b5b31edd532", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CNA_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 110.5, 
+                "left": 168
+            }, 
+            "tool_state": "{\"name\": \"CNA_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 0, 
+            "name": "Input dataset"
+        }, 
+        "3": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "23ef0773-bb6f-46d0-87ed-1e30ba30a474", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CELLULARITY_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 444.5, 
+                "left": 169
+            }, 
+            "tool_state": "{\"name\": \"CELLULARITY_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 3, 
+            "name": "Input dataset"
+        }, 
+        "2": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "c10b96be-246b-474b-ae13-81b313a53336", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CNA_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 341.5, 
+                "left": 177
+            }, 
+            "tool_state": "{\"name\": \"CNA_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 2, 
+            "name": "Input dataset"
+        }, 
+        "5": {
+            "tool_id": "dpclust", 
+            "content_id": "dpclust", 
+            "uuid": "662fd62a-adce-4a96-bacb-8e9d81bb1e1d", 
+            "tool_version": "1.0.5", 
+            "outputs": [
+                {
+                    "type": "png", 
+                    "name": "output_png"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "cellularity"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "no_clusters"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "proportions"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "assignments"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "co_clustering"
+                }
+            ], 
+            "post_job_actions": {
+                "HideDatasetActionproportions": {
+                    "output_name": "proportions", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetActionoutput_png": {
+                    "output_name": "output_png", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetActioncellularity": {
+                    "output_name": "cellularity", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetActionassignments": {
+                    "output_name": "assignments", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetActionno_clusters": {
+                    "output_name": "no_clusters", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetActionco_clustering": {
+                    "output_name": "co_clustering", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }
+            }, 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {
+                "input_vcf": {
+                    "output_name": "output", 
+                    "id": 1
+                }, 
+                "input_cellularity": {
+                    "output_name": "output", 
+                    "id": 3
+                }, 
+                "input_battenberg": {
+                    "output_name": "output", 
+                    "id": 2
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 272.5, 
+                "left": 506
+            }, 
+            "tool_state": "{\"__page__\": 0, \"input_battenberg\": \"null\", \"__rerun_remap_job_id__\": null, \"input_cellularity\": \"null\", \"sample_number\": \"\\\"1\\\"\", \"input_vcf\": \"null\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 5, 
+            "name": "DPClust"
+        }, 
+        "4": {
+            "tool_id": "dpclust_cellularity", 
+            "content_id": "dpclust_cellularity", 
+            "uuid": "565ed54d-283f-435a-8c0e-c65773cf33e7", 
+            "tool_version": "1.0.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "cellularity"
+                }
+            ], 
+            "post_job_actions": {
+                "HideDatasetActioncellularity": {
+                    "output_name": "cellularity", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }
+            }, 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {
+                "input_battenberg": {
+                    "output_name": "output", 
+                    "id": 0
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 143.5, 
+                "left": 496.5
+            }, 
+            "tool_state": "{\"__page__\": 0, \"__rerun_remap_job_id__\": null, \"input_battenberg\": \"null\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 4, 
+            "name": "DPClust Cellularity"
+        }, 
+        "6": {
+            "tool_id": "smc_het_eval", 
+            "content_id": "smc_het_eval", 
+            "uuid": "2e421fbc-d87a-4ea4-85ed-01ad9a87699a", 
+            "tool_version": "0.1.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "outfile"
+                }
+            ], 
+            "post_job_actions": {}, 
+            "workflow_outputs": [
+                {
+                    "output_name": "outfile", 
+                    "uuid": "2c933486-c802-44e9-80b7-14174619f8ac", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {
+                "proportion|predfile": {
+                    "output_name": "proportions", 
+                    "id": 5
+                }, 
+                "cluster_assignment|predfile": {
+                    "output_name": "assignments", 
+                    "id": 5
+                }, 
+                "cellularity|predfile": {
+                    "output_name": "cellularity", 
+                    "id": 4
+                }, 
+                "cocluster_assignment|predfile": {
+                    "output_name": "co_clustering", 
+                    "id": 5
+                }, 
+                "population|predfile": {
+                    "output_name": "no_clusters", 
+                    "id": 5
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 250.5, 
+                "left": 843.5
+            }, 
+            "tool_state": "{\"cocluster_assignment\": \"{\\\"ancestor\\\": {\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}, \\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"__page__\": 0, \"approx\": \"{\\\"enable\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__rerun_remap_job_id__\": null, \"proportion\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"sample\": \"\\\"/opt/galaxy/data/Tumour1/Tumour1\\\"\", \"cellularity\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"cluster_assignment\": \"{\\\"predfile\\\": null, \\\"phylogeny\\\": {\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"population\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 6, 
+            "name": "SMC-Het Evaluator"
+        }
+    }, 
+    "annotation": "", 
+    "uuid": "b7a8f018-91b4-4b2f-a7cb-b9ae3986ebb2"
+}
